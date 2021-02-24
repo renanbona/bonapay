@@ -18,6 +18,10 @@ config :bonapay, BonapayWeb.Endpoint,
   pubsub_server: Bonapay.PubSub,
   live_view: [signing_salt: "UgTxZ26e"]
 
+config :bonapay, Bonapay.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
